@@ -1,0 +1,140 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9fafc;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  background: #003366;
+  color: #fff;
+  padding: 20px;
+}
+
+.logo {
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  margin: 0;
+}
+
+.breadcrumb {
+  background: #e6ecf5;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: #fff;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+/* Destacar o botão ativo */
+.semester-tab.active {
+  background: #004080;
+  color: #fff;
+  font-weight: bold;
+}
+
+.semester-tab {
+  margin: 5px;
+  padding: 10px 15px;
+  border: 1px solid #004080;
+  background: #fff;
+  color: #004080;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.semester-tab:hover {
+  background: #e6f0ff;
+}
+
+.semestre {
+  display: none;
+  padding: 20px;
+  animation: fadeIn 0.4s;
+}
+
+.semestre.active {
+  display: block;
+}
+
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+thead {
+  background: #004080;
+  color: #fff;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background: #f5f8ff;
+}
+
+h3 {
+  margin-left: 5%;
+  color: #004080;
+  margin-top: 40px;
+}
+
+.acao-final {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.btn-pdf, .btn-print {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid #004080;
+  border-radius: 4px;
+  background: #fff;
+  color: #004080;
+  text-decoration: none;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.btn-pdf:hover, .btn-print:hover {
+  background: #f0f4ff;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 700px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  thead { display: none; }
+  tr {
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  td {
+    border: none;
+    display: flex;
+    justify-content: space-between;
+  }
+}
