@@ -64,7 +64,6 @@ h1 {
   border-bottom: 1px solid #ccc;
 }
 
-/* Botões de semestre */
 .semester-tab {
   margin: 5px;
   padding: 10px 15px;
@@ -81,15 +80,15 @@ h1 {
   background: var(--hover-bg);
 }
 
-/* Estado ativo (aba selecionada) */
+/* Estado ativo */
 .semester-tab.active {
   background: var(--primary);
   color: #fff;
   font-weight: bold;
 }
 
-/* Foco de acessibilidade */
-.semester-tab:focus {
+/* Acessibilidade – foco para teclado */
+.semester-tab:focus-visible {
   outline: 3px solid var(--hover-bg);
   outline-offset: 2px;
 }
@@ -129,7 +128,7 @@ td {
   text-align: left;
 }
 
-/* Linha alternada */
+/* Linhas alternadas */
 tbody tr:nth-child(even) {
   background: var(--table-alt);
 }
@@ -142,7 +141,7 @@ h3 {
 }
 
 /* ============================================================
-   AÇÕES FINAIS (Botões de PDF/Impressão)
+   AÇÕES FINAIS (PDF/Impressão)
    ============================================================ */
 .acao-final {
   text-align: center;
@@ -179,7 +178,7 @@ h3 {
 /* ============================================================
    RESPONSIVIDADE
    ------------------------------------------------------------
-   Transformar tabela em "cards" no mobile.
+   Tabela vira "cards" no mobile para melhor leitura.
    ============================================================ */
 @media (max-width: 700px) {
 
@@ -208,3 +207,4 @@ h3 {
     justify-content: space-between;
   }
 }
+
