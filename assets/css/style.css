@@ -1,25 +1,25 @@
-// =========================================
-// Controle de Abas da Matriz Curricular
-// Acessibilidade WCAG + ARIA
-// Autor: Luiz Barbosa
-// Otimizado com apoio de Inteligência Artificial
-// Para fins acadêmicos, profissionais e demonstrativos
-// =========================================
+/* =========================================
+   Controle de Abas da Matriz Curricular
+   Acessibilidade (WCAG + ARIA)
+   Autor: Luiz Barbosa
+   Otimizado com apoio de Inteligência Artificial
+   Uso acadêmico, profissional e demonstrativo
+   ========================================= */
 
-// Seleciona abas e conteúdos
+/* Seleciona abas e conteúdos */
 const tabs = document.querySelectorAll(".semester-tab");
 const semestres = document.querySelectorAll(".semestre");
 
-// Função principal
+/* Função principal: ativa o semestre selecionado */
 function ativarSemestre(numero) {
-  // Atualiza os conteúdos
+  /* Atualiza conteúdos */
   semestres.forEach(sec => {
     const ativo = sec.getAttribute("data-semestre") === numero;
     sec.classList.toggle("active", ativo);
     sec.setAttribute("aria-hidden", ativo ? "false" : "true");
   });
 
-  // Atualiza abas
+  /* Atualiza abas */
   tabs.forEach(tab => {
     const ativo = tab.getAttribute("data-semestre") === numero;
 
@@ -27,26 +27,27 @@ function ativarSemestre(numero) {
     tab.setAttribute("aria-selected", ativo ? "true" : "false");
     tab.setAttribute("tabindex", ativo ? "0" : "-1");
 
-    if (ativo) tab.focus(); // garante foco no tab correto
+    if (ativo) tab.focus(); // Foca automaticamente na aba ativa
   });
 
-  // Breadcrumb (último item)
+  /* Atualiza último item do breadcrumb */
   const breadcrumbSpan = document.querySelector(".breadcrumb span:last-child");
   if (breadcrumbSpan) {
     breadcrumbSpan.textContent = `${numero}º Semestre`;
   }
 }
 
-// 🎯 NAVEGAÇÃO POR TECLADO - FUNÇÃO ADICIONADA
+/* Navegação por teclado (WCAG) */
 function configurarNavegacaoTeclado() {
   tabs.forEach((tab, index) => {
-    // Clique
+
+    /* Ativação por clique */
     tab.addEventListener("click", () => {
       const numero = tab.getAttribute("data-semestre");
       ativarSemestre(numero);
     });
 
-    // Teclado
+    /* Ativação e navegação por teclado */
     tab.addEventListener("keydown", (e) => {
       const currentIndex = index;
       let nextIndex;
@@ -87,11 +88,11 @@ function configurarNavegacaoTeclado() {
   });
 }
 
-// Inicialização
+/* Inicialização */
 document.addEventListener("DOMContentLoaded", () => {
   configurarNavegacaoTeclado();
-  
-  // Ativar primeira aba no carregamento
+
+  /* Define a primeira aba como ativa ao carregar */
   if (tabs.length > 0) {
     tabs[0].setAttribute("tabindex", "0");
     ativarSemestre("1");
