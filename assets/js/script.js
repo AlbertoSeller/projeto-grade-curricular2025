@@ -37,7 +37,7 @@ function ativarSemestre(numero) {
   }
 }
 
-// 🎯 NAVEGAÇÃO POR TECLADO - NOVA IMPLEMENTAÇÃO
+// NAVEGAÇÃO POR TECLADO - NOVA IMPLEMENTAÇÃO
 function configurarNavegacaoTeclado() {
   tabs.forEach((tab, index) => {
     // Clique
@@ -97,3 +97,4 @@ document.addEventListener("DOMContentLoaded", () => {
     ativarSemestre("1");
   }
 });
+
