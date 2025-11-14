@@ -9,6 +9,7 @@ const semestres = document.querySelectorAll(".semestre");
 
 // Função principal para ativar o semestre
 function ativarSemestre(numero) {
+
   // Remove estado ativo dos conteúdos
   semestres.forEach(sec => {
     sec.classList.remove("active");
@@ -27,7 +28,12 @@ function ativarSemestre(numero) {
     const ativo = tab.getAttribute("data-semestre") === numero;
     tab.classList.toggle("active", ativo);
     tab.setAttribute("aria-selected", ativo ? "true" : "false");
-    tab.setAttribute("tabindex", ativo ? "0" : "-1");
+
+    if (ativo) {
+      tab.setAttribute("tabindex", "0");
+    } else {
+      tab.setAttribute("tabindex", "-1");
+    }
   });
 
   // Atualiza breadcrumb (último item)
@@ -44,7 +50,6 @@ tabs.forEach(tab => {
 
   // Acessibilidade via teclado
   tab.addEventListener("keydown", (e) => {
-    // Ativa aba com Enter ou Espaço
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       ativarSemestre(numero);
@@ -55,5 +60,6 @@ tabs.forEach(tab => {
 
 // Ativa a primeira aba ao carregar
 if (tabs.length > 0) {
-  ativarSemestre("1"); // tudo acessível desde o início
+  tabs[0].setAttribute("tabindex", "0"); // ❤️ AGORA É FOCÁVEL PELO TAB
+  ativarSemestre("1");
 }
