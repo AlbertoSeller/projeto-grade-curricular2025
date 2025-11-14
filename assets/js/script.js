@@ -37,24 +37,63 @@ function ativarSemestre(numero) {
   }
 }
 
-// Eventos das abas
-tabs.forEach(tab => {
-  const numero = tab.getAttribute("data-semestre");
-
-  // Clique
-  tab.addEventListener("click", () => ativarSemestre(numero));
-
-  // Teclado (Enter ou Espaço)
-  tab.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
+// 🎯 NAVEGAÇÃO POR TECLADO - NOVA IMPLEMENTAÇÃO
+function configurarNavegacaoTeclado() {
+  tabs.forEach((tab, index) => {
+    // Clique
+    tab.addEventListener("click", () => {
+      const numero = tab.getAttribute("data-semestre");
       ativarSemestre(numero);
-    }
-  });
-});
+    });
 
-// Ativar primeira aba no carregamento
-if (tabs.length > 0) {
-  tabs[0].setAttribute("tabindex", "0");
-  ativarSemestre("1");
+    // Teclado
+    tab.addEventListener("keydown", (e) => {
+      const currentIndex = index;
+      let nextIndex;
+
+      switch(e.key) {
+        case "Enter":
+        case " ":
+          e.preventDefault();
+          const numero = tab.getAttribute("data-semestre");
+          ativarSemestre(numero);
+          break;
+
+        case "ArrowRight":
+        case "ArrowDown":
+          e.preventDefault();
+          nextIndex = (currentIndex + 1) % tabs.length;
+          tabs[nextIndex].focus();
+          break;
+
+        case "ArrowLeft":
+        case "ArrowUp":
+          e.preventDefault();
+          nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+          tabs[nextIndex].focus();
+          break;
+
+        case "Home":
+          e.preventDefault();
+          tabs[0].focus();
+          break;
+
+        case "End":
+          e.preventDefault();
+          tabs[tabs.length - 1].focus();
+          break;
+      }
+    });
+  });
 }
+
+// Inicialização
+document.addEventListener("DOMContentLoaded", () => {
+  configurarNavegacaoTeclado();
+  
+  // Ativar primeira aba no carregamento
+  if (tabs.length > 0) {
+    tabs[0].setAttribute("tabindex", "0");
+    ativarSemestre("1");
+  }
+});
