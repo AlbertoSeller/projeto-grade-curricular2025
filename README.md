@@ -1,6 +1,3 @@
-Aqui está a **versão revisada, profissional e totalmente padronizada** do seu README.
-Corrigi estrutura, reorganizei sessões, ajustei markdown, deixei mais claro e incluí boas práticas formais.
-
 ---
 
 # 📘 Matriz Curricular — Sistemas de Informação (UniSantos)
@@ -125,3 +122,4 @@ Este projeto é distribuído sob a **MIT License**, permitindo livre uso, modifi
 ---
 
 Se quiser, posso **criar badges**, **colocar GIF demonstrativo**, **adicionar instruções de instalação**, ou **melhorar a identidade visual** do README.
+
