@@ -1,203 +1,262 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Matriz Curricular - Sistemas de Informação | UniSantos</title>
+
+  <!-- CSS principal -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
+  <!-- ============================
+       HEADER
+       ============================ -->
   <header>
-    <img src="assets/img/logo.png" alt="Logo UniSantos" class="logo">
+    <img src="assets/img/logo.png" alt="Logo da UniSantos" class="logo" />
     <h1>Matriz Curricular - Sistemas de Informação</h1>
   </header>
 
-  <nav class="breadcrumb">
-    <span>Curso de Sistemas de Informação → </span><span>Matriz Curricular</span>
+  <!-- ============================
+       BREADCRUMB
+       ============================ -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <span>Curso de Sistemas de Informação → </span>
+    <span>Matriz Curricular</span>
   </nav>
 
-  <div class="tabs">
-    <button class="semester-tab" data-semestre="1">1º</button>
-    <button class="semester-tab" data-semestre="2">2º</button>
-    <button class="semester-tab" data-semestre="3">3º</button>
-    <button class="semester-tab" data-semestre="4">4º</button>
-    <button class="semester-tab" data-semestre="5">5º</button>
-    <button class="semester-tab" data-semestre="6">6º</button>
-    <button class="semester-tab" data-semestre="7">7º</button>
-    <button class="semester-tab" data-semestre="8">8º</button>
+  <!-- ============================
+       TABS DOS SEMESTRES
+       role="tablist" para acessibilidade
+       ============================ -->
+  <div class="tabs" role="tablist" aria-label="Semestres">
+    <button class="semester-tab active" role="tab" aria-selected="true" tabindex="0" data-semestre="1">1º</button>
+    <button class="semester-tab" role="tab" aria-selected="false" tabindex="0" data-semestre="2">2º</button>
+    <button class="semester-tab" role="tab" aria-selected="false" tabindex="0" data-semestre="3">3º</button>
+    <button class="semester-tab" role="tab" aria-selected="false" tabindex="0" data-semestre="4">4º</button>
+    <button class="semester-tab" role="tab" aria-selected="false" tabindex="0" data-semestre="5">5º</button>
+    <button class="semester-tab" role="tab" aria-selected="false" tabindex="0" data-semestre="6">6º</button>
+    <button class="semester-tab" role="tab" aria-selected="false" tabindex="0" data-semestre="7">7º</button>
+    <button class="semester-tab" role="tab" aria-selected="false" tabindex="0" data-semestre="8">8º</button>
   </div>
 
+  <!-- ============================
+       CONTEÚDO PRINCIPAL
+       Cada semestre é um <section> com role="tabpanel"
+       ============================ -->
   <main id="conteudo">
+
     <!-- 1º SEMESTRE -->
-<div class="semestre active" data-semestre="1">
-  <h2>1º Semestre</h2>
-  <table>
-    <thead>
-      <tr><th>Disciplina</th><th>Carga Horária</th><th>Modalidade</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>ALGORITMOS E LÓGICA DE PROGRAMAÇÃO</td><td>120h</td><td>Projeto de Pesquisa</td></tr>
-      <tr><td>FUNDAMENTOS DE SISTEMAS COMPUTACIONAIS I</td><td>80h</td><td>Projeto de Pesquisa</td></tr>
-      <tr><td>HISTÓRIA DA EDUCAÇÃO SUPERIOR E DA INFORMÁTICA</td><td>40h</td><td>a distância</td></tr>
-      <tr><td>INTRODUÇÃO À COMPUTAÇÃO</td><td>80h</td><td>Projeto de Pesquisa</td></tr>
-      <tr><td>MATEMÁTICA APLICADA</td><td>80h</td><td>a distância</td></tr>
-    </tbody>
-  </table>
-</div>
+    <section class="semestre active" data-semestre="1" role="tabpanel" aria-hidden="false">
+      <h2>1º Semestre</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Disciplina</th>
+            <th>Carga Horária</th>
+            <th>Modalidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>ALGORITMOS E LÓGICA DE PROGRAMAÇÃO</td><td>120h</td><td>Projeto de Pesquisa</td></tr>
+          <tr><td>FUNDAMENTOS DE SISTEMAS COMPUTACIONAIS I</td><td>80h</td><td>Projeto de Pesquisa</td></tr>
+          <tr><td>HISTÓRIA DA EDUCAÇÃO SUPERIOR E DA INFORMÁTICA</td><td>40h</td><td>a distância</td></tr>
+          <tr><td>INTRODUÇÃO À COMPUTAÇÃO</td><td>80h</td><td>Projeto de Pesquisa</td></tr>
+          <tr><td>MATEMÁTICA APLICADA</td><td>80h</td><td>a distância</td></tr>
+        </tbody>
+      </table>
+    </section>
 
-<!-- 2º SEMESTRE -->
-<div class="semestre" data-semestre="2">
-  <h2>2º Semestre</h2>
-  <table>
-    <thead>
-      <tr><th>Disciplina</th><th>Carga Horária</th><th>Modalidade</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>ÁLGEBRA LINEAR APLICADA</td><td>80h</td><td>a distância</td></tr>
-      <tr><td>FUNDAMENTOS DE SISTEMAS COMPUTACIONAIS II</td><td>80h</td><td>Projeto de Pesquisa</td></tr>
-      <tr><td>HUMANISMO SOLIDÁRIO E SOCIEDADE</td><td>40h</td><td>a distância</td></tr>
-      <tr><td>INTRODUÇÃO À ENGENHARIA DE SOFTWARE</td><td>80h</td><td>Projeto de Pesquisa</td></tr>
-      <tr><td>PROGRAMAÇÃO ESTRUTURADA</td><td>120h</td><td>Projeto de Pesquisa</td></tr>
-    </tbody>
-  </table>
-</div>
+    <!-- 2º SEMESTRE -->
+    <section class="semestre" data-semestre="2" role="tabpanel" aria-hidden="true">
+      <h2>2º Semestre</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Disciplina</th>
+            <th>Carga Horária</th>
+            <th>Modalidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>ÁLGEBRA LINEAR APLICADA</td><td>80h</td><td>a distância</td></tr>
+          <tr><td>FUNDAMENTOS DE SISTEMAS COMPUTACIONAIS II</td><td>80h</td><td>Projeto de Pesquisa</td></tr>
+          <tr><td>HUMANISMO SOLIDÁRIO E SOCIEDADE</td><td>40h</td><td>a distância</td></tr>
+          <tr><td>INTRODUÇÃO À ENGENHARIA DE SOFTWARE</td><td>80h</td><td>Projeto de Pesquisa</td></tr>
+          <tr><td>PROGRAMAÇÃO ESTRUTURADA</td><td>120h</td><td>Projeto de Pesquisa</td></tr>
+        </tbody>
+      </table>
+    </section>
 
-<!-- 3º SEMESTRE -->
-<div class="semestre" data-semestre="3">
-  <h2>3º Semestre</h2>
-  <table>
-    <thead>
-      <tr><th>Disciplina</th><th>Carga Horária</th><th>Modalidade</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>CONTABILIDADE DE CUSTOS</td><td>80h</td><td>Projeto de Pesquisa</td></tr>
-      <tr><td>ESTRUTURAS DE DADOS</td><td>120h</td><td>Projeto de Pesquisa</td></tr>
-      <tr><td>LINGUAGENS DE PROGRAMAÇÃO</td><td>80h</td><td>Projeto de Pesquisa</td></tr>
-      <tr><td>PROBABILIDADE E ESTATÍSTICA</td><td>80h</td><td>a distância</td></tr>
-      <tr><td>SEGURANÇA DA INFORMAÇÃO</td><td>40h</td><td>Projeto de Pesquisa</td></tr>
-    </tbody>
-  </table>
-</div>
+    <!-- 3º SEMESTRE -->
+    <section class="semestre" data-semestre="3" role="tabpanel" aria-hidden="true">
+      <h2>3º Semestre</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Disciplina</th>
+            <th>Carga Horária</th>
+            <th>Modalidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>CONTABILIDADE DE CUSTOS</td><td>80h</td><td>Projeto de Pesquisa</td></tr>
+          <tr><td>ESTRUTURAS DE DADOS</td><td>120h</td><td>Projeto de Pesquisa</td></tr>
+          <tr><td>LINGUAGENS DE PROGRAMAÇÃO</td><td>80h</td><td>Projeto de Pesquisa</td></tr>
+          <tr><td>PROBABILIDADE E ESTATÍSTICA</td><td>80h</td><td>a distância</td></tr>
+          <tr><td>SEGURANÇA DA INFORMAÇÃO</td><td>40h</td><td>Projeto de Pesquisa</td></tr>
+        </tbody>
+      </table>
+    </section>
 
-<!-- 4º SEMESTRE -->
-<div class="semestre" data-semestre="4">
-  <h2>4º Semestre</h2>
-  <table>
-    <thead>
-      <tr><th>Disciplina</th><th>Carga Horária</th><th>Modalidade</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>ARQUITETURA DE REDES DE COMPUTADORES</td><td>40h</td><td>Projeto de Pesquisa</td></tr>
-      <tr><td>CIÊNCIAS DO AMBIENTE E SUSTENTABILIDADE</td><td>80h</td><td>a distância</td></tr>
-      <tr><td>INTERAÇÃO HOMEM-COMPUTADOR</td><td>40h</td><td>Projeto de Pesquisa</td></tr>
-      <tr><td>PESQUISA OPERACIONAL</td><td>80h</td><td>a distância</td></tr>
-      <tr><td>PROGRAMAÇÃO ORIENTADA A OBJETOS</td><td>80h</td><td>Projeto de Pesquisa</td></tr>
-      <tr><td>TÉCNICAS DE AVALIAÇÃO DE SISTEMAS</td><td>40h</td><td>Projeto de Pesquisa</td></tr>
-      <tr><td>TEORIA GERAL DOS SISTEMAS</td><td>80h</td><td>Projeto de Pesquisa</td></tr>
-    </tbody>
-  </table>
-</div>
+    <!-- 4º SEMESTRE -->
+    <section class="semestre" data-semestre="4" role="tabpanel" aria-hidden="true">
+      <h2>4º Semestre</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Disciplina</th>
+            <th>Carga Horária</th>
+            <th>Modalidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>ARQUITETURA DE REDES DE COMPUTADORES</td><td>40h</td><td>Projeto de Pesquisa</td></tr>
+          <tr><td>CIÊNCIAS DO AMBIENTE E SUSTENTABILIDADE</td><td>80h</td><td>a distância</td></tr>
+          <tr><td>INTERAÇÃO HOMEM-COMPUTADOR</td><td>40h</td><td>Projeto de Pesquisa</td></tr>
+          <tr><td>PESQUISA OPERACIONAL</td><td>80h</td><td>a distância</td></tr>
+          <tr><td>PROGRAMAÇÃO ORIENTADA A OBJETOS</td><td>80h</td><td>Projeto de Pesquisa</td></tr>
+          <tr><td>TÉCNICAS DE AVALIAÇÃO DE SISTEMAS</td><td>40h</td><td>Projeto de Pesquisa</td></tr>
+          <tr><td>TEORIA GERAL DOS SISTEMAS</td><td>80h</td><td>Projeto de Pesquisa</td></tr>
+        </tbody>
+      </table>
+    </section>
 
-<!-- 5º SEMESTRE -->
-<div class="semestre" data-semestre="5">
-  <h2>5º Semestre</h2>
-  <table>
-    <thead>
-      <tr><th>Disciplina</th><th>Carga Horária</th><th>Modalidade</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>BANCO DE DADOS</td><td>80h</td><td>Projeto de Pesquisa</td></tr>
-      <tr><td>ENGENHARIA DE SOFTWARE</td><td>180h</td><td>Projeto de Pesquisa / Projeto de Extensão</td></tr>
-      <tr><td>FUNDAMENTOS DE SISTEMAS OPERACIONAIS</td><td>80h</td><td>a distância</td></tr>
-      <tr><td>MODELAGEM DE NEGÓCIOS E REQUISITOS</td><td>80h</td><td>Projeto de Pesquisa</td></tr>
-      <tr><td>OPERAÇÃO E SEGURANÇA EM REDES DE COMPUTADORES</td><td>80h</td><td>Projeto de Pesquisa</td></tr>
-    </tbody>
-  </table>
-</div>
+    <!-- 5º SEMESTRE -->
+    <section class="semestre" data-semestre="5" role="tabpanel" aria-hidden="true">
+      <h2>5º Semestre</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Disciplina</th>
+            <th>Carga Horária</th>
+            <th>Modalidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>BANCO DE DADOS</td><td>80h</td><td>Projeto de Pesquisa</td></tr>
+          <tr><td>ENGENHARIA DE SOFTWARE</td><td>180h</td><td>Projeto de Pesquisa / Projeto de Extensão</td></tr>
+          <tr><td>FUNDAMENTOS DE SISTEMAS OPERACIONAIS</td><td>80h</td><td>a distância</td></tr>
+          <tr><td>MODELAGEM DE NEGÓCIOS E REQUISITOS</td><td>80h</td><td>Projeto de Pesquisa</td></tr>
+          <tr><td>OPERAÇÃO E SEGURANÇA EM REDES DE COMPUTADORES</td><td>80h</td><td>Projeto de Pesquisa</td></tr>
+        </tbody>
+      </table>
+    </section>
 
-<!-- 6º SEMESTRE -->
-<div class="semestre" data-semestre="6">
-  <h2>6º Semestre</h2>
-  <table>
-    <thead>
-      <tr><th>Disciplina</th><th>Carga Horária</th><th>Modalidade</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>AUDITORIA E COMPLIANCE</td><td>40h</td><td>a distância</td></tr>
-      <tr><td>GERENCIAMENTO DE SISTEMAS OPERACIONAIS</td><td>80h</td><td>a distância</td></tr>
-      <tr><td>GESTÃO DE PROJETOS DE TECNOLOGIA DA INFORMAÇÃO</td><td>180h</td><td>Projeto de Pesquisa / Projeto de Extensão</td></tr>
-      <tr><td>GOVERNANÇA E GESTÃO DE TI</td><td>80h</td><td>Projeto de Pesquisa</td></tr>
-      <tr><td>INTRODUÇÃO A CIRCUITOS E SISTEMAS DIGITAIS</td><td>40h</td><td>Projeto de Pesquisa</td></tr>
-      <tr><td>PRINCÍPIOS DE DIREITO APLICADO À TECNOLOGIA</td><td>40h</td><td>a distância</td></tr>
-    </tbody>
-  </table>
-</div>
+    <!-- 6º SEMESTRE -->
+    <section class="semestre" data-semestre="6" role="tabpanel" aria-hidden="true">
+      <h2>6º Semestre</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Disciplina</th>
+            <th>Carga Horária</th>
+            <th>Modalidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>AUDITORIA E COMPLIANCE</td><td>40h</td><td>a distância</td></tr>
+          <tr><td>GERENCIAMENTO DE SISTEMAS OPERACIONAIS</td><td>80h</td><td>a distância</td></tr>
+          <tr><td>GESTÃO DE PROJETOS DE TECNOLOGIA DA INFORMAÇÃO</td><td>180h</td><td>Projeto de Pesquisa / Projeto de Extensão</td></tr>
+          <tr><td>GOVERNANÇA E GESTÃO DE TI</td><td>80h</td><td>Projeto de Pesquisa</td></tr>
+          <tr><td>INTRODUÇÃO A CIRCUITOS E SISTEMAS DIGITAIS</td><td>40h</td><td>Projeto de Pesquisa</td></tr>
+          <tr><td>PRINCÍPIOS DE DIREITO APLICADO À TECNOLOGIA</td><td>40h</td><td>a distância</td></tr>
+        </tbody>
+      </table>
+    </section>
 
-<!-- 7º SEMESTRE -->
-<div class="semestre" data-semestre="7">
-  <h2>7º Semestre</h2>
-  <table>
-    <thead>
-      <tr><th>Disciplina</th><th>Carga Horária</th><th>Modalidade</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>ARQUITETURA E PROJETO DE SOFTWARE</td><td>180h</td><td>Projeto de Pesquisa / Projeto de Extensão</td></tr>
-      <tr><td>INTRODUÇÃO À ANÁLISE DE DADOS</td><td>80h</td><td>Projeto de Pesquisa</td></tr>
-      <tr><td>INTRODUÇÃO À GESTÃO DE EQUIPES</td><td>40h</td><td>Projeto de Pesquisa</td></tr>
-      <tr><td>INTRODUÇÃO À ORGANIZAÇÃO E ARQUITETURA DE COMPUTADORES</td><td>40h</td><td>Projeto de Pesquisa</td></tr>
-      <tr><td>SISTEMAS DISTRIBUÍDOS</td><td>120h</td><td>Projeto de Pesquisa</td></tr>
-    </tbody>
-  </table>
-</div>
+    <!-- 7º SEMESTRE -->
+    <section class="semestre" data-semestre="7" role="tabpanel" aria-hidden="true">
+      <h2>7º Semestre</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Disciplina</th>
+            <th>Carga Horária</th>
+            <th>Modalidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>ARQUITETURA E PROJETO DE SOFTWARE</td><td>180h</td><td>Projeto de Pesquisa / Projeto de Extensão</td></tr>
+          <tr><td>INTRODUÇÃO À ANÁLISE DE DADOS</td><td>80h</td><td>Projeto de Pesquisa</td></tr>
+          <tr><td>INTRODUÇÃO À GESTÃO DE EQUIPES</td><td>40h</td><td>Projeto de Pesquisa</td></tr>
+          <tr><td>INTRODUÇÃO À ORGANIZAÇÃO E ARQUITETURA DE COMPUTADORES</td><td>40h</td><td>Projeto de Pesquisa</td></tr>
+          <tr><td>SISTEMAS DISTRIBUÍDOS</td><td>120h</td><td>Projeto de Pesquisa</td></tr>
+        </tbody>
+      </table>
+    </section>
 
-<!-- 8º SEMESTRE -->
-<div class="semestre" data-semestre="8">
-  <h2>8º Semestre</h2>
-  <table>
-    <thead>
-      <tr><th>Disciplina</th><th>Carga Horária</th><th>Modalidade</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>DATAWAREHOUSE E SISTEMAS DE APOIO A DECISÃO</td><td>80h</td><td>Projeto de Pesquisa</td></tr>
-      <tr><td>ECONOMIA E FINANÇAS</td><td>80h</td><td>a distância</td></tr>
-      <tr><td>EMPREENDEDORISMO E INOVAÇÃO</td><td>80h</td><td>a distância</td></tr>
-      <tr><td>PROGRAMAÇÃO PARA AMBIENTES DISTRIBUÍDOS</td><td>200h</td><td>Projeto de Pesquisa / Projeto de Extensão</td></tr>
-    </tbody>
-  </table>
-</div>
+    <!-- 8º SEMESTRE -->
+    <section class="semestre" data-semestre="8" role="tabpanel" aria-hidden="true">
+      <h2>8º Semestre</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Disciplina</th>
+            <th>Carga Horária</th>
+            <th>Modalidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>DATAWAREHOUSE E SISTEMAS DE APOIO A DECISÃO</td><td>80h</td><td>Projeto de Pesquisa</td></tr>
+          <tr><td>ECONOMIA E FINANÇAS</td><td>80h</td><td>a distância</td></tr>
+          <tr><td>EMPREENDEDORISMO E INOVAÇÃO</td><td>80h</td><td>a distância</td></tr>
+          <tr><td>PROGRAMAÇÃO PARA AMBIENTES DISTRIBUÍDOS</td><td>200h</td><td>Projeto de Pesquisa / Projeto de Extensão</td></tr>
+        </tbody>
+      </table>
+    </section>
 
   </main>
 
-  <h3>Atividades ao Longo do Curso</h3>
-  <table>
-    <thead>
-      <tr><th>Componente</th><th>Carga Horária</th><th>Observação</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>ATIVIDADES COMPLEMENTARES</td><td>20h</td><td>Desenvolvidas individualmente ao longo do curso</td></tr>
-      <tr><td>ATIVIDADES CURRICULARES DE PESQUISA</td><td>200h</td><td>Distribuídas ao longo de todos os semestres</td></tr>
-      <tr><td>ESTÁGIO SUPERVISIONADO</td><td>200h</td><td>A partir do 5º semestre</td></tr>
-    </tbody>
-  </table>
+  <!-- ============================
+       ATIVIDADES, OPTATIVA E AÇÕES FINAIS
+       ============================ -->
+  <section>
+    <h3>Atividades ao Longo do Curso</h3>
+    <table>
+      <thead>
+        <tr><th>Componente</th><th>Carga Horária</th><th>Observação</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>ATIVIDADES COMPLEMENTARES</td><td>20h</td><td>Desenvolvidas individualmente ao longo do curso</td></tr>
+        <tr><td>ATIVIDADES CURRICULARES DE PESQUISA</td><td>200h</td><td>Distribuídas ao longo de todos os semestres</td></tr>
+        <tr><td>ESTÁGIO SUPERVISIONADO</td><td>200h</td><td>A partir do 5º semestre</td></tr>
+      </tbody>
+    </table>
+  </section>
 
-  <h3>Optativa</h3>
-  <table>
-    <thead>
-      <tr><th>Disciplina</th><th>Carga Horária</th><th>Modalidade</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>LIBRAS</td><td>80h</td><td>a distância</td></tr>
-    </tbody>
-  </table>
+  <section>
+    <h3>Optativa</h3>
+    <table>
+      <thead>
+        <tr><th>Disciplina</th><th>Carga Horária</th><th>Modalidade</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>LIBRAS</td><td>80h</td><td>a distância</td></tr>
+      </tbody>
+    </table>
+  </section>
 
-  <div class="acao-final">
+  <div class="acao-final" role="contentinfo">
     <a href="https://www.unisantos.br/wp-content/uploads/2024/10/Sistemas-de-Informacao_2025.pdf"
        target="_blank" rel="noopener noreferrer" class="btn-pdf">Baixar PDF Oficial</a>
+
     <a href="https://www.unisantos.br/wp-content/uploads/2024/10/Sistemas-de-Informacao_2025.pdf"
        target="_blank" rel="noopener noreferrer" class="btn-print">Imprimir PDF Oficial</a>
   </div>
 
-   <script src="assets/js/script.js" defer></script>
+  <!-- Script principal -->
+  <script src="assets/js/script.js" defer></script>
 </body>
 </html>
-
