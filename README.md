@@ -1,51 +1,62 @@
+Aqui está a **versão revisada, profissional e totalmente padronizada** do seu README.
+Corrigi estrutura, reorganizei sessões, ajustei markdown, deixei mais claro e incluí boas práticas formais.
+
+---
+
 # 📘 Matriz Curricular — Sistemas de Informação (UniSantos)
 
-Este projeto apresenta a matriz curricular do curso **Sistemas de Informação** da **Universidade Católica de Santos (UniSantos)**, organizada em abas por semestre, com foco em acessibilidade, responsividade e manutenção simples do código.
+Este projeto apresenta a matriz curricular do curso **Sistemas de Informação** da **Universidade Católica de Santos (UniSantos)**, organizada em abas por semestre, com foco em **acessibilidade**, **responsividade**, **boa arquitetura de código** e **fácil manutenção**.
 
 ---
 
 ## 🚀 Tecnologias Utilizadas
 
-- **HTML5** (semântico e acessível)
-- **CSS3** (custom properties, responsividade e animações leves)
-- **JavaScript Vanilla** (tabs dinâmicas com suporte a teclado e ARIA)
-- **WCAG Guidelines** para acessibilidade aprimorada
+* **HTML5 semântico**
+* **CSS3** (Custom Properties, responsividade, acessibilidade visual)
+* **JavaScript Vanilla** (Tabs dinâmicas com ARIA e suporte a teclado)
+* **WCAG 2.1 Guidelines** (acessibilidade reforçada)
 
 ---
 
 ## 🎯 Objetivo do Projeto
 
-Oferecer uma visualização clara, moderna e acessível da matriz curricular oficial, permitindo:
+Oferecer aos estudantes e professores uma visualização:
 
-- Navegação rápida entre semestres  
-- Leitura fácil em dispositivos móveis  
-- Uso por leitores de tela  
-- Alterações rápidas para futuras atualizações do curso  
+* Clara e intuitiva dos semestres
+* Acessível a leitores de tela
+* Totalmente responsiva (mobile-first)
+* Fácil de atualizar para futuras revisões da matriz curricular
 
 ---
 
 ## 📑 Funcionalidades Principais
 
-### ✔ Sistema de Tabs com Acessibilidade
-- Navegação por **teclado** (Enter, Espaço)
-- Uso correto de `role="tab"` e `role="tabpanel"`
-- Indicação de aba ativa via `aria-selected`
-- Controle automático do `aria-hidden`
+### ✔ Sistema de Tabs com Acessibilidade (WCAG)
+
+* Navegação com **Enter** e **Espaço**
+* Uso correto de `role="tab"` e `role="tabpanel"`
+* Estado da aba via `aria-selected`
+* Conteúdos ocultos com `aria-hidden="true"`
 
 ### ✔ Breadcrumb Dinâmico
-Atualiza o semestre exibido conforme o usuário troca de aba.
+
+Mostra automaticamente qual semestre está sendo visualizado.
 
 ### ✔ Tabelas Responsivas
-Em telas pequenas, as tabelas tornam-se **cards**, preservando a leitura sem scroll lateral.
 
-### ✔ Código Otimizado e Estruturado
-- CSS organizado por seções com comentários profissionais  
-- JavaScript enxuto, modular e sem dependências externas  
-- Semântica HTML adequada para SEO e acessibilidade  
+Em telas pequenas, as tabelas transformam-se em **cards amigáveis**, evitando scroll horizontal.
+
+### ✔ Código Otimizado
+
+* CSS organizado, comentado e modular
+* JavaScript enxuto, estruturado e sem dependências externas
+* HTML semântico e acessível
 
 ---
 
 ## 📂 Estrutura do Repositório
+
+```
 projeto-grade-curricular/
 │
 ├── index.html
@@ -53,52 +64,64 @@ projeto-grade-curricular/
 ├── CHANGELOG.md
 │
 ├── assets/
-│ ├── css/
-│ │ ├── style.css
-│ │ └── style.min.css
-│ ├── js/
-│ │ ├── script.js
-│ │ └── script.min.js
-│ └── img/
-│ ├── logo.png
-│ └── logotipo.png
-
+│   ├── css/
+│   │   ├── style.css
+│   │   └── style.min.css
+│   ├── js/
+│   │   ├── script.js
+│   │   └── script.min.js
+│   └── img/
+│       ├── logo.png
+│       └── logotipo.png
+```
 
 ---
 
 ## 📎 PDF Oficial da Matriz
 
-Para referência, o PDF oficial pode ser baixado diretamente no botão disponível na página.
+A página inclui um botão para download do PDF oficial disponibilizado pela universidade.
 
 ---
 
 ## 🛠 Como Editar ou Expandir o Projeto
 
-### Alterar disciplinas
-Edite diretamente as tabelas dentro das `<section>` por semestre.
+### 🔧 Alterar disciplinas
 
-### Ajustar cores
-No início do CSS, as **CSS Custom Properties** permitem alterar a paleta facilmente:
+Edite as tabelas dentro das `<section data-semestre="">` conforme necessário.
+
+### 🎨 Ajustar cores
+
+As cores estão centralizadas em **CSS Custom Properties**, facilitando troca de tema:
 
 ```css
 :root {
   --primary: #004080;
   --secondary: #003366;
 }
-Melhorias futuras sugeridas
+```
 
-Dark mode
+---
 
-Versão com busca por disciplina
+## 🌱 Melhorias Futuras Sugeridas
 
-Exportação própria para PDF com layout customizado
+* Tema **Dark Mode**
+* Busca por disciplinas
+* Exportação direta para PDF com layout personalizado
+* Consumir matriz via **JSON / API**
+* Animações acessíveis (prefeições por redução de movimento)
 
-API/JSON para leitura dinâmica da matriz
+---
 
-👨‍💻 Autor
+## 👨‍💻 Autor
 
-Projeto otimizado com auxílio de IA para fins acadêmicos e profissionais.
+Projeto desenvolvido e otimizado com apoio de Inteligência Artificial para fins **acadêmicos**, **profissionais** e **demonstrativos**.
 
-📝 Licença
+---
 
-Este projeto é livre para estudo, modificação e utilização conforme necessidade (MIT License).
+## 📝 Licença
+
+Este projeto é distribuído sob a **MIT License**, permitindo livre uso, modificação e distribuição.
+
+---
+
+Se quiser, posso **criar badges**, **colocar GIF demonstrativo**, **adicionar instruções de instalação**, ou **melhorar a identidade visual** do README.
