@@ -1,65 +1,60 @@
 // =========================================
 // Controle de Abas da Matriz Curricular
-// Com acessibilidade aprimorada (WCAG)
+// Acessibilidade WCAG + ARIA
+// Autor: Luiz Barbosa
+// Otimizado com apoio de Inteligência Artificial
+// Para fins acadêmicos, profissionais e demonstrativos
 // =========================================
 
-// Seleciona elementos principais
+// Seleciona abas e conteúdos
 const tabs = document.querySelectorAll(".semester-tab");
 const semestres = document.querySelectorAll(".semestre");
 
-// Função principal para ativar o semestre
+// Função principal
 function ativarSemestre(numero) {
-
-  // Remove estado ativo dos conteúdos
+  // Atualiza os conteúdos
   semestres.forEach(sec => {
-    sec.classList.remove("active");
-    sec.setAttribute("aria-hidden", "true");
+    const ativo = sec.getAttribute("data-semestre") === numero;
+    sec.classList.toggle("active", ativo);
+    sec.setAttribute("aria-hidden", ativo ? "false" : "true");
   });
 
-  // Mostra o semestre correspondente
-  const alvo = document.querySelector(`.semestre[data-semestre="${numero}"]`);
-  if (alvo) {
-    alvo.classList.add("active");
-    alvo.setAttribute("aria-hidden", "false");
-  }
-
-  // Atualiza acessibilidade e classes das tabs
+  // Atualiza abas
   tabs.forEach(tab => {
     const ativo = tab.getAttribute("data-semestre") === numero;
+
     tab.classList.toggle("active", ativo);
     tab.setAttribute("aria-selected", ativo ? "true" : "false");
+    tab.setAttribute("tabindex", ativo ? "0" : "-1");
 
-    if (ativo) {
-      tab.setAttribute("tabindex", "0");
-    } else {
-      tab.setAttribute("tabindex", "-1");
-    }
+    if (ativo) tab.focus(); // garante foco no tab correto
   });
 
-  // Atualiza breadcrumb (último item)
+  // Breadcrumb (último item)
   const breadcrumbSpan = document.querySelector(".breadcrumb span:last-child");
-  if (breadcrumbSpan) breadcrumbSpan.textContent = `${numero}º Semestre`;
+  if (breadcrumbSpan) {
+    breadcrumbSpan.textContent = `${numero}º Semestre`;
+  }
 }
 
-// Adiciona eventos às abas (clique + teclado)
+// Eventos das abas
 tabs.forEach(tab => {
   const numero = tab.getAttribute("data-semestre");
 
-  // Clique do mouse
+  // Clique
   tab.addEventListener("click", () => ativarSemestre(numero));
 
-  // Acessibilidade via teclado
+  // Teclado (Enter ou Espaço)
   tab.addEventListener("keydown", (e) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       ativarSemestre(numero);
-      tab.focus();
     }
   });
 });
 
-// Ativa a primeira aba ao carregar
+// Ativar primeira aba no carregamento
 if (tabs.length > 0) {
-  tabs[0].setAttribute("tabindex", "0"); // ❤️ AGORA É FOCÁVEL PELO TAB
+  tabs[0].setAttribute("tabindex", "0");
   ativarSemestre("1");
 }
