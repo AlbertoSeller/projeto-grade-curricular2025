@@ -103,15 +103,15 @@ As cores estão centralizadas em **CSS Custom Properties**, facilitando troca de
 
 * Tema **Dark Mode**
 * Busca por disciplinas
-* Exportação direta para PDF com layout personalizado
+* Busca por carga horária
 * Consumir matriz via **JSON / API**
-* Animações acessíveis (prefeições por redução de movimento)
+
 
 ---
 
 ## 👨‍💻 Autor
 
-Projeto desenvolvido e otimizado com apoio de Inteligência Artificial para fins **acadêmicos**, **profissionais** e **demonstrativos**.
+Desenvolvido por Luiz Barbosa, otimizado com apoio de Inteligência Artificial para fins acadêmicos, profissionais e demonstrativos.
 
 ---
 
@@ -120,6 +120,3 @@ Projeto desenvolvido e otimizado com apoio de Inteligência Artificial para fins
 Este projeto é distribuído sob a **MIT License**, permitindo livre uso, modificação e distribuição.
 
 ---
-
-Se quiser, posso **criar badges**, **colocar GIF demonstrativo**, **adicionar instruções de instalação**, ou **melhorar a identidade visual** do README.
-
