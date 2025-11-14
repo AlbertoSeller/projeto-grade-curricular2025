@@ -1,61 +1,59 @@
-/* ============================================================
-   CONTROLE DE TABS / SEMESTRES
-   ------------------------------------------------------------
-   - Alterna entre os semestres ao clicar nas abas
-   - Atualiza o breadcrumb dinamicamente
-   - Marca visualmente a aba ativa
-   - Permite navegação via teclado (acessibilidade)
-   ============================================================ */
+// =========================================
+// Controle de Abas da Matriz Curricular
+// Com acessibilidade aprimorada (WCAG)
+// =========================================
 
-// Seletores principais
-const semestres = document.querySelectorAll('.semestre');
-const tabs = document.querySelectorAll('.semester-tab');
-const breadcrumbSpan = document.querySelector('.breadcrumb span:last-child');
+// Seleciona elementos principais
+const tabs = document.querySelectorAll(".semester-tab");
+const semestres = document.querySelectorAll(".semestre");
 
-/**
- * Ativa o semestre selecionado
- * @param {string|number} numero - Número do semestre (1 a 8)
- */
+// Função principal para ativar o semestre
 function ativarSemestre(numero) {
-  // Remove o estado ativo de todos os semestres
-  semestres.forEach(s => s.classList.remove('active'));
-
-  // Mostra o semestre correspondente
-  const ativo = document.querySelector(`.semestre[data-semestre="${numero}"]`);
-  if (ativo) ativo.classList.add('active');
-
-  // Atualiza o breadcrumb
-  if (breadcrumbSpan) {
-    breadcrumbSpan.textContent = `${numero}º Semestre`;
-  }
-
-  // Atualiza visual das tabs
-  tabs.forEach(tab => tab.classList.remove('active'));
-  const tabAtiva = document.querySelector(`.semester-tab[data-semestre="${numero}"]`);
-  if (tabAtiva) tabAtiva.classList.add('active');
-}
-
-// Adiciona evento de clique nas tabs
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    const semestre = tab.getAttribute('data-semestre');
-    ativarSemestre(semestre);
+  // Remove estado ativo dos conteúdos
+  semestres.forEach(sec => {
+    sec.classList.remove("active");
+    sec.setAttribute("aria-hidden", "true");
   });
 
-  // Acessibilidade: permite ativar com teclado
-  tab.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
+  // Mostra o semestre correspondente
+  const alvo = document.querySelector(`.semestre[data-semestre="${numero}"]`);
+  if (alvo) {
+    alvo.classList.add("active");
+    alvo.setAttribute("aria-hidden", "false");
+  }
+
+  // Atualiza acessibilidade e classes das tabs
+  tabs.forEach(tab => {
+    const ativo = tab.getAttribute("data-semestre") === numero;
+    tab.classList.toggle("active", ativo);
+    tab.setAttribute("aria-selected", ativo ? "true" : "false");
+    tab.setAttribute("tabindex", ativo ? "0" : "-1");
+  });
+
+  // Atualiza breadcrumb (último item)
+  const breadcrumbSpan = document.querySelector(".breadcrumb span:last-child");
+  if (breadcrumbSpan) breadcrumbSpan.textContent = `${numero}º Semestre`;
+}
+
+// Adiciona eventos às abas (clique + teclado)
+tabs.forEach(tab => {
+  const numero = tab.getAttribute("data-semestre");
+
+  // Clique do mouse
+  tab.addEventListener("click", () => ativarSemestre(numero));
+
+  // Acessibilidade via teclado
+  tab.addEventListener("keydown", (e) => {
+    // Ativa aba com Enter ou Espaço
+    if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
-      const semestre = tab.getAttribute('data-semestre');
-      ativarSemestre(semestre);
+      ativarSemestre(numero);
+      tab.focus();
     }
   });
 });
 
-// Ativa automaticamente o primeiro semestre ao carregar
-if (semestres.length > 0) {
-  ativarSemestre(1);
+// Ativa a primeira aba ao carregar
+if (tabs.length > 0) {
+  ativarSemestre("1"); // tudo acessível desde o início
 }
-
-
-
