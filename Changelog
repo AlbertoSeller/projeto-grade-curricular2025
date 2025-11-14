@@ -1,0 +1,45 @@
+# Changelog
+Todas as mudanças importantes neste projeto serão documentadas aqui.
+
+O formato segue as recomendações de:
+- **Keep a Changelog** — https://keepachangelog.com/pt-BR/1.0.0/
+- **Semantic Versioning (SemVer 2.0)** — https://semver.org/
+
+---
+
+## [Unreleased]
+
+---
+
+## [1.1.0] — 2025-11-13
+### Added
+- Acessibilidade avançada com:
+  - `role="tab"` e `role="tabpanel"`
+  - Suporte a teclado (Enter / Espaço)
+  - `aria-selected`, `aria-hidden`, `tabindex`
+
+### Changed
+- CSS reestruturado com variáveis globais, animações e organização modular.
+- JavaScript totalmente refatorado, reduzindo linhas e aumentando clareza.
+- HTML refeito com semântica correta e sections isoladas.
+
+### Fixed
+- Erros de pastas e paths quebrados no GitHub.
+
+---
+
+## [1.0.0] — 2025-11-12
+### Added
+- Implementação completa do sistema de abas (tabs) por semestre.
+- Breadcrumb dinâmico.
+- Responsividade: tabelas transformadas em “cards” no mobile.
+- Estrutura final de 8 semestres + atividades complementares + optativa.
+- PDF oficial linkado.
+- README profissional e documentação completa.
+
+---
+
+## [0.1.0] — 2025-11-11
+### Added
+- Estrutura inicial do repositório.
+- Primeira versão dos arquivos base.
