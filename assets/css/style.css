@@ -59,12 +59,20 @@ h1, h2, h3 {
    ------------------------------ */
 .tabs {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;          
+  overflow-x: auto;           
+  white-space: nowrap;        
   gap: 6px;
   padding: 10px 20px;
   background: var(--cor-branco);
   border-bottom: 1px solid var(--cor-borda);
+  scrollbar-width: thin;      
 }
+
+.tabs::-webkit-scrollbar {
+  height: 6px;                
+}
+
 
 .semester-tab {
   padding: 10px 15px;
@@ -176,4 +184,5 @@ table tr:nth-child(even) {
   border-radius: 4px;
   box-shadow: 0 0 4px rgba(0,0,0,0.1);
 }
+
 
